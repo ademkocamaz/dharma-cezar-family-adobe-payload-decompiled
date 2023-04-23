@@ -1344,7 +1344,6 @@ dec_label_pc_401940:
   ret i32 %9, !insn.addr !285
 
 ; uselistorder directives
-  uselistorder i32 %9, { 1, 0 }
   uselistorder i32 %arg4, { 2, 0, 1 }
 }
 
@@ -5298,6 +5297,7 @@ dec_label_pc_403da9:                              ; preds = %dec_label_pc_403b34
   ret i32 %339, !insn.addr !1642
 
 ; uselistorder directives
+  uselistorder i32 %339, { 1, 0 }
   uselistorder i32 %144, { 1, 0 }
   uselistorder i32 %139, { 1, 0, 2 }
   uselistorder i32 %138, { 2, 3, 4, 0, 5, 6, 7, 1 }
@@ -6363,6 +6363,7 @@ dec_label_pc_404a82:                              ; preds = %dec_label_pc_404a34
 ; uselistorder directives
   uselistorder i1 %31, { 1, 0 }
   uselistorder i32 %stack_var_-20.03.reload, { 1, 0, 2 }
+  uselistorder i32 %0, { 1, 0 }
   uselistorder i32* %storemerge4.reg2mem, { 2, 0, 1 }
   uselistorder i32* %stack_var_-20.03.reg2mem, { 2, 0, 1 }
   uselistorder i32* %stack_var_-16.02.reg2mem, { 2, 0, 1 }
@@ -7313,7 +7314,6 @@ dec_label_pc_405374:                              ; preds = %dec_label_pc_405344
 
 ; uselistorder directives
   uselistorder i32 %92, { 1, 0 }
-  uselistorder i32 %60, { 1, 0 }
   uselistorder i32 %stack_var_-8.0.reload, { 3, 2, 0, 1 }
   uselistorder i32 %.reload, { 0, 1, 2, 6, 7, 4, 5, 3 }
   uselistorder i32* %25, { 2, 1, 0, 4, 3, 5, 6, 7 }
@@ -8249,7 +8249,7 @@ dec_label_pc_405dc0:
   ret i32 %0, !insn.addr !2587
 
 ; uselistorder directives
-  uselistorder i32 %0, { 2, 0, 1, 3, 4, 5, 6, 7 }
+  uselistorder i32 %0, { 3, 0, 1, 2, 4, 5, 6, 7 }
 }
 
 define i32 @function_405e20(i32* %arg1, i32 %arg2, i32 %arg3) local_unnamed_addr {
@@ -9052,7 +9052,7 @@ dec_label_pc_4066af:                              ; preds = %dec_label_pc_4065fa
   uselistorder i32 %esp.15.reload, { 1, 0 }
   uselistorder i32 %stack_var_-12.14.reload, { 1, 0 }
   uselistorder i32* %12, { 1, 0 }
-  uselistorder i32* %stack_var_-16, { 8, 2, 6, 5, 9, 1, 3, 7, 4, 10, 0 }
+  uselistorder i32* %stack_var_-16, { 8, 2, 7, 5, 9, 1, 3, 6, 4, 10, 0 }
   uselistorder i32* %.reg2mem, { 1, 2, 0 }
   uselistorder i32* %stack_var_-12.1.lcssa.reg2mem, { 1, 2, 0 }
   uselistorder i32* %esp.1.lcssa.reg2mem, { 1, 2, 0 }
@@ -11588,7 +11588,7 @@ dec_label_pc_407df4:                              ; preds = %dec_label_pc_407de8
   ret i32 %stack_var_-16.1.reload, !insn.addr !3566
 
 ; uselistorder directives
-  uselistorder i32 %storemerge.off03.reload, { 0, 2, 1 }
+  uselistorder i32 %storemerge.off03.reload, { 2, 1, 0 }
   uselistorder i32 %2, { 1, 0 }
   uselistorder i32 %0, { 1, 0, 2 }
   uselistorder i32* %stack_var_-20, { 2, 0, 3, 1 }
@@ -11754,7 +11754,7 @@ dec_label_pc_407f3d.preheader:                    ; preds = %dec_label_pc_407f00
   %4 = icmp ne i32 %3, 0, !insn.addr !3606
   %5 = icmp eq i1 %4, false, !insn.addr !3607
   %.pre = add i32 %2, -4
-  %.pre6 = inttoptr i32 %.pre to i32*
+  %.pre5 = inttoptr i32 %.pre to i32*
   store i32 0, i32* %storemerge.off03.reg2mem, !insn.addr !3607
   store i32 0, i32* %stack_var_-16.02.reg2mem, !insn.addr !3607
   store i32 0, i32* %stack_var_-16.0.lcssa.reg2mem, !insn.addr !3607
@@ -11774,7 +11774,7 @@ dec_label_pc_407f5e:                              ; preds = %dec_label_pc_407f45
   %9 = add i32 %8, %0, !insn.addr !3611
   %10 = inttoptr i32 %9 to i32*, !insn.addr !3611
   %11 = load i32, i32* %10, align 4, !insn.addr !3611
-  store i32 %11, i32* %.pre6, align 4, !insn.addr !3612
+  store i32 %11, i32* %.pre5, align 4, !insn.addr !3612
   %12 = call i32 @function_407ee0(i32 ptrtoint (i32* @2 to i32)), !insn.addr !3613
   %13 = or i32 %12, %stack_var_-16.02.reload, !insn.addr !3614
   store i32 %13, i32* %stack_var_-16.1.reg2mem, !insn.addr !3615
@@ -11795,7 +11795,7 @@ dec_label_pc_407f79:                              ; preds = %dec_label_pc_407f5e
 dec_label_pc_407f7b:                              ; preds = %dec_label_pc_407f79, %dec_label_pc_407f3d.preheader
   %storemerge.off0.lcssa.reload = load i32, i32* %storemerge.off0.lcssa.reg2mem
   %stack_var_-16.0.lcssa.reload = load i32, i32* %stack_var_-16.0.lcssa.reg2mem
-  store i32 %0, i32* %.pre6, align 4, !insn.addr !3617
+  store i32 %0, i32* %.pre5, align 4, !insn.addr !3617
   %18 = call i32 @function_406b70(i32 %storemerge.off0.lcssa.reload), !insn.addr !3618
   store i32 %stack_var_-16.0.lcssa.reload, i32* %stack_var_-16.2.reg2mem, !insn.addr !3619
   br label %dec_label_pc_407f87, !insn.addr !3619
@@ -11805,7 +11805,6 @@ dec_label_pc_407f87:                              ; preds = %dec_label_pc_407f7b
   ret i32 %stack_var_-16.2.reload, !insn.addr !3620
 
 ; uselistorder directives
-  uselistorder i32 %storemerge.off03.reload, { 1, 0 }
   uselistorder i32 %stack_var_-16.02.reload, { 1, 0 }
   uselistorder i32 %0, { 1, 0, 2 }
   uselistorder i32* %stack_var_-20, { 2, 0, 3, 1 }
